@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:twelve_ecommerce/pages/sign_in_phone.dart';
+import 'package:twelve_ecommerce/pages/sign_in_username.dart';
+import 'package:twelve_ecommerce/pages/signup.dart';
 
 class ChooseLoginMethod extends StatefulWidget{
   
@@ -27,7 +32,7 @@ class _ChooseLoginMethodState extends State<ChooseLoginMethod>{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
+                  const Expanded(
                       child: SizedBox(),
                       flex:2,
                   ),
@@ -35,7 +40,7 @@ class _ChooseLoginMethodState extends State<ChooseLoginMethod>{
                       child: Column(
                         children: <Widget>[
                           Container(
-                            child: Text('Нэвтрэх төрлөө сонгоно уу', style: TextStyle(
+                            child: const Text('Нэвтрэх төрлөө сонгоно уу', style: TextStyle(
                                 fontSize: 22,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold
@@ -61,7 +66,7 @@ class _ChooseLoginMethodState extends State<ChooseLoginMethod>{
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.only(top: 48.0),
       child: ElevatedButton(
-          onPressed: (){},
+          onPressed: () => Get.to(SignInUsername()),
           child: Text('Хэрэглэгчийн нэр, нууц үг')
       ),
     );
@@ -73,7 +78,7 @@ class _ChooseLoginMethodState extends State<ChooseLoginMethod>{
       height: 40.0,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
-          onPressed: (){},
+          onPressed: () => Get.to(SignInPhone()),
           child: Text('Утасны дугаар')
       ),
     );
@@ -85,7 +90,7 @@ class _ChooseLoginMethodState extends State<ChooseLoginMethod>{
       height: 40.0,
       width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
-          onPressed: (){},
+          onPressed: () => Get.to(SignUp()),
           child: Text('Бүртгүүлэх')
       ),
     );
